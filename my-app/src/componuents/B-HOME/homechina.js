@@ -26,7 +26,7 @@ export default function ChinnaHome() {
         }
     };
 
-   
+
     $(window).scroll(function () {
         if ($(document).scrollTop() > 50) {
             $('.nav').addClass('affix');
@@ -43,11 +43,11 @@ export default function ChinnaHome() {
     useEffect(() => {
         const myText = new SplitType(textRef.current);
 
-      
+
         const animateText = () => {
             gsap.fromTo(
                 '.char',
-                { y: 100, opacity: 0 },  
+                { y: 100, opacity: 0 },
                 {
                     y: 0,
                     opacity: 1,
@@ -114,19 +114,25 @@ export default function ChinnaHome() {
             </div>
 
 
-            <section>
-                <div className="mini-block-statement w-clearfix">
-                    <h2 className="heading-34">Our Mission</h2>
-                    <p className="text-block-60">
-                        At NYSTAI, we specialize in creating memorable experiences through strategy,
-                        content, innovation and technology. We transform physical and digital spaces
-                        to create unforgettable moments with updated trends and innovation to provide
-                        visual solutions for our partners - continuing to provide<br /> All Things Visual.
-                    </p>
-                </div>
-            </section>
+
 
             <div className={` chinasite-landing-page ${hover}`}>
+                <div
+                    className="split right"
+                    onMouseEnter={() => setHover("hover-right")}
+                    onMouseLeave={() => setHover("")}
+                >
+                    <div className="hoverrrr">
+                        <h6 className="mb-5">TECHNOLOGIES</h6>
+                        <span className="hover-container"> Digital signage<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
+                        <span className="hover-container">content manager<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
+                        <span className="hover-container"> creative services<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
+                        <span className="hover-container">field support<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
+                        <div className="button-right-left-cn">
+                            <button className="btn custom-btn mt-4" >Learn More</button>
+                        </div>
+                    </div>
+                </div>
                 <div
                     className="split left"
                     onMouseEnter={() => setHover("hover-left")}
@@ -148,23 +154,25 @@ export default function ChinnaHome() {
 
 
                 </div>
-                <div
-                    className="split right"
-                    onMouseEnter={() => setHover("hover-right")}
-                    onMouseLeave={() => setHover("")}
-                >
-                    <div className="hoverrrr">
-                        <h6 className="mb-5">TECHNOLOGIES</h6>
-                        <span className="hover-container"> Digital signage<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
-                        <span className="hover-container">content manager<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
-                        <span className="hover-container"> creative services<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
-                        <span className="hover-container">field support<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
-                        <div className="button-right-left-cn">
-                            <button className="btn custom-btn mt-4" >Learn More</button>
-                        </div>
-                    </div>
-                </div>
+
             </div>
+
+
+
+
+            <section>
+                <div className="mini-block-statement w-clearfix">
+                    <h2 className="heading-34">Our Mission</h2>
+                    <p className="text-block-60">
+                        At NYSTAI, we specialize in creating memorable experiences through strategy,
+                        content, innovation and technology. We transform physical and digital spaces
+                        to create unforgettable moments with updated trends and innovation to provide
+                        visual solutions for our partners - continuing to provide<br /> All Things Visual.
+                    </p>
+                </div>
+            </section>
+
+
 
             <Footercn />
         </>

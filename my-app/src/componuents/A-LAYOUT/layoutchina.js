@@ -5,7 +5,7 @@ import trinav from '../Z-IMAGE/triangle (6).png';
 import logo1 from '../Z-IMAGE/triangle (6).png';  // Import the first logo
 import logo2 from '../Z-IMAGE/nystai without tri.png';  // Import the second logo
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
+import { faCircleUser, faEarthAmericas, faLanguage } from "@fortawesome/free-solid-svg-icons";
 
 const Layoutchinna = () => {
     const [navActive, setNavActive] = useState(false);
@@ -51,13 +51,15 @@ const Layoutchinna = () => {
                         </div>
                     </div>
                     <ul className={`navbar-nav ${navActive ? 'active' : ''}`}>
-                    <img src={scrollY === 0 ? logo1 : logo2} alt="Logo" className="navbar-logo" /> {/* Logo changes based on scroll */}
+                    <img src={scrollY === 0 ? logo1 : logo2} alt="Logo" className="navbar-logo" /> 
                     </ul>
                     <button className="mode-toggle-container" id="mode-toggle">
-                        <FontAwesomeIcon icon={faCircleUser} shake /> CONTACT
+                        <FontAwesomeIcon icon={faCircleUser} shake className="me-3"/> 
+                        <FontAwesomeIcon icon={faEarthAmericas} />
                     </button>
                 </div>
             </nav>
+            
             <Outlet />
         </>
     );
