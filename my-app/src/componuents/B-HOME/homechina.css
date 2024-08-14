@@ -1,0 +1,251 @@
+* {
+    box-sizing: border-box;
+    font-family: "kabob";
+}
+
+body {
+    background-color: #00101a;
+}
+
+
+
+
+
+
+
+
+
+
+/* ///// */
+.mini-block-statement {
+    background-color: #00101a;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 10vw;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.heading-34 {
+    float: none;
+    color: #EBF5EE;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: kabob;
+    font-size: 5rem;
+    font-weight: 400;
+    line-height: 100%;
+    display: inline-block;
+}
+
+.mini-block-statement h2 {
+    text-align: left;
+    text-transform: uppercase;
+    margin: 0;
+    font-family: kabob;
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 100%;
+    display: flex;
+}
+
+.text-block-60 {
+    float: right;
+    color: #EBF5EE;
+    padding-top: 2vw;
+    padding-bottom: 0;
+    position: relative;
+}
+
+
+
+
+
+
+
+/* ////////////////// */
+
+
+body {
+    margin: 0;
+    font-family: Arial;
+    font-size: 17px;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
+
+#myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+#myBtn:hover {
+    background: #ddd;
+    color: black;
+}
+
+
+
+
+
+
+/* /////////////// */
+/* china site landing page */
+.icon-hidden {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hover-container:hover .icon-hidden {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.chinasite-landing-page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+.split {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: width 0.5s ease;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+
+.split.left {
+   background-image: url('../Z-IMAGE//hover-img-1.png');
+    color: white;
+}
+
+.split.right {
+    background-image: url('../Z-IMAGE//hover-img-2.png');
+    color: #f8f9fa;
+}
+
+.split.left:hover,
+.split.right:hover {
+    cursor: pointer;
+}
+
+.chinasite-landing-page.hover-left .left {
+    width: 75%;
+}
+
+.chinasite-landing-page.hover-left .right {
+    width: 25%;
+}
+
+.chinasite-landing-page.hover-right .right {
+    width: 75%;
+}
+
+.chinasite-landing-page.hover-right .left {
+    width: 25%;
+}
+
+.split .hoverrrr {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.split h6 {
+    text-transform: uppercase;
+    font-size: 2.5em;
+}
+
+
+/* Parallax effect */
+.split.left {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.split.right {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.split span {
+    text-transform: uppercase;
+    margin-bottom: 10%;
+    font-size: 1.2em;
+    transition: 1s;
+}
+
+
+.split span:hover {
+    transition: 1s;
+    transform: scale(1.20);
+}
+
+
+
+.custom-btn {
+    transition: 1s;
+    border: 3px solid #22c0de;
+    color: #22c0de;
+    padding: 10px 20px;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-btn:hover {
+    transition: 1s;
+    background-color: #22c0de;
+    color: black;
+    transform: scale(1.10);
+}
+
+.video-text-animation-cn {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    line-height: 5.9rem;
+}
+
+.char {
+    transform: translateY(115px);
+    transition: transform .5s;
+}

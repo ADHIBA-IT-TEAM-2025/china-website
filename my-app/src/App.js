@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
+import { Routes, Route, HashRouter } from 'react-router-dom';
+import Layoutchinna from './componuents/A-LAYOUT/layoutchina';
+import ChinnaHome from './componuents/B-HOME/homechina';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<Layoutchinna />}>
+          <Route index element={<ChinnaHome />} />
+        </Route>
+      </Routes>
+    </HashRouter>
+
   );
 }
 
