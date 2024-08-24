@@ -3,22 +3,9 @@
     font-family: "kabob";
 }
 
-body {
-    background-color: #00101a;
-}
-
-
-
-
-
-
-
-
-
-
 /* ///// */
 .mini-block-statement {
-    background-color: #00101a;
+    background-color: #f7f7f7;
     text-align: center;
     flex-direction: column;
     justify-content: center;
@@ -32,7 +19,7 @@ body {
 
 .heading-34 {
     float: none;
-    color: #EBF5EE;
+    color: #000000;
     margin-top: 0;
     margin-bottom: 0;
     font-family: kabob;
@@ -55,27 +42,13 @@ body {
 
 .text-block-60 {
     float: right;
-    color: #EBF5EE;
+    color: #000000;
     padding-top: 2vw;
     padding-bottom: 0;
     position: relative;
 }
 
-
-
-
-
-
-
 /* ////////////////// */
-
-
-body {
-    margin: 0;
-    font-family: Arial;
-    font-size: 17px;
-}
-
 #myVideo {
     position: fixed;
     right: 0;
@@ -108,11 +81,6 @@ body {
     color: black;
 }
 
-
-
-
-
-
 /* /////////////// */
 /* china site landing page */
 .icon-hidden {
@@ -125,7 +93,6 @@ body {
     opacity: 1;
     transform: translateX(0);
 }
-
 
 .chinasite-landing-page {
     width: 100%;
@@ -146,7 +113,7 @@ body {
 }
 
 .split.left {
-   background-image: url('../Z-IMAGE//hover-img-1.png');
+    background-image: url('../Z-IMAGE//hover-img-1.png');
     color: white;
 }
 
@@ -193,7 +160,6 @@ body {
     font-size: 2.5em;
 }
 
-
 /* Parallax effect */
 .split.left {
     background-attachment: fixed;
@@ -207,7 +173,6 @@ body {
     background-size: cover;
 }
 
-
 .split span {
     text-transform: uppercase;
     margin-bottom: 10%;
@@ -215,13 +180,10 @@ body {
     transition: 1s;
 }
 
-
 .split span:hover {
     transition: 1s;
     transform: scale(1.20);
 }
-
-
 
 .custom-btn {
     transition: 1s;

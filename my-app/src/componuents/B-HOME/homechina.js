@@ -107,7 +107,7 @@ export default function ChinnaHome() {
                         fontSize: "4.5em",
                         textAlign: "center",
                         textTransform: "uppercase",
-                        zIndex: 1, // Ensures the text is above the video
+                        zIndex: 1,
                     }}>All Things Visual
                 </h1>
 
@@ -128,6 +128,7 @@ export default function ChinnaHome() {
                         <span className="hover-container">content manager<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
                         <span className="hover-container"> creative services<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
                         <span className="hover-container">field support<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
+                        <span className="hover-container">field support<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
                         <div className="button-right-left-cn">
                             <button className="btn custom-btn mt-4" >Learn More</button>
                         </div>
@@ -138,7 +139,6 @@ export default function ChinnaHome() {
                     onMouseEnter={() => setHover("hover-left")}
                     onMouseLeave={() => setHover("")} nonce=""
                 >
-
                     <div className="hoverrrr">
                         <h6 className="mb-5">SUPPLY CHAIN MANAGEMENT </h6>
                         <span className="hover-container"> Large Format<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
@@ -150,11 +150,7 @@ export default function ChinnaHome() {
                             <button className="btn custom-btn mt-4" >Learn More</button>
                         </div>
                     </div>
-
-
-
                 </div>
-
             </div>
 
 
