@@ -1,62 +1,81 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Outlet } from "react-router-dom";
 import './nav.css';
-import logo1 from '../Z-IMAGE/triangle (6).png';  // Import the first logo
-import logo2 from '../Z-IMAGE/nystai without tri.png';  // Import the second logo
+import logo1 from '../Z-IMAGE/triangle (6).png';
+import logo2 from '../Z-IMAGE/nystai without tri.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleUser, faEarthAmericas, faLanguage } from "@fortawesome/free-solid-svg-icons";
+import { faCircleUser, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
+import Formcn from "../A-LAYOUT/form";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 const Layoutchinna = () => {
-    const [active, setActive] = useState(false);
-    const [hoveredItem, setHoveredItem] = useState(null); // State to track hovered item
 
-    const menuToggle = () => {
-        setActive(!active);
+    const [isOpen2, setIsOpen2] = useState(false);
+    const [logo, setLogo] = useState(logo1); // State to manage the logo
+    const [navbarHeight, setNavbarHeight] = useState(80); // State to manage navbar height
+
+
+    const toggleOverlay2 = () => {
+        setIsOpen2(!isOpen2);
     };
 
-    // Map each menu item to a specific image URL
-    const images = {
-        Home: "https://images.unsplash.com/photo-1453989799106-bbad8d7b5191?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
-        SOLUTION: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80",
-        PRODUCT: "https://images.unsplash.com/photo-1506702315536-dd8b83e2dcf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80",
-        SERVICES: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80",
-        PROTECTPLAN: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80",
-        Contact: "https://images.unsplash.com/photo-1506702315536-dd8b83e2dcf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80"
+    const scrollValue = () => {
+        const scroll = window.scrollY;
+        const navbar = document.getElementById('navbar');
+
+        if (scroll < 200) {
+            navbar.classList.remove('BgColour');
+            setLogo(logo1); // Set logo to logo1 when scroll is less than 200
+            setNavbarHeight(120); // Set navbar height to 80px when scroll is less than 200
+        } else {
+            navbar.classList.add('BgColour');
+            setLogo(logo2); // Change logo to logo2 when scrolled down
+            setNavbarHeight(70); // Change navbar height to 40px when scrolled down
+        }
     };
+
+    useEffect(() => {
+        window.addEventListener('scroll', scrollValue);
+        return () => {
+            window.removeEventListener('scroll', scrollValue);
+        };
+    }, []);
 
     return (
         <>
-            <div className={`fullPageMenu ${active ? 'active' : ''}`} id="nav">
-                <div className="banner">
-                    {/* Display the image based on the hovered item */}
-                    <img
-                        src={hoveredItem ? images[hoveredItem] : images.Home}
-                        alt="banner"
-                    />
-                </div>
-                <div className="nav">
-                    <ul>
-                        {/* Assign hover handlers to each navigation link */}
-                        {Object.keys(images).map((item) => (
-                            <li key={item}>
-                                <a
-                                    href="#"
-                                    data-text={item}
-                                    onMouseEnter={() => setHoveredItem(item)}
-                                    onMouseLeave={() => setHoveredItem(null)}
-                                >
-                                    {item}
-                                </a>
-                            </li>
-                        ))}
+
+            <div className="nav-cn-bg-main">
+                <div id="navbar" className="navbar-cn-bg-main" style={{ height: `${navbarHeight}px` }}>
+                    <ul className=" navbar-cn-bg-main-ul">
+
+                        <li className="menu-nav-cn n">
+                            <Drawer />
+                        </li>
+                        <li>
+                            <img src={logo} alt="Logo" className="navbar-logo" />
+                        </li>
+                        <li>
+                            <span onClick={toggleOverlay2}>
+                                <FontAwesomeIcon icon={faCircleUser} /> CONTACT
+                            </span>
+                        </li>
+
                     </ul>
                 </div>
+            </div>
 
-                <span
-                    className={`menuicon ${active ? 'active' : ''}`}
-                    id="toggle"
-                    onClick={menuToggle}
-                ></span>
+
+            <div>
+                <div id="myNav" className="overlay" style={{ height: isOpen2 ? '100%' : '0%' }}>
+                    <div className="over-header">
+                        <a className="closebtn" onClick={toggleOverlay2}> <FontAwesomeIcon icon={faCircleXmark} /></a>
+                    </div>
+                    <div className="overlay-content">
+                        <Formcn />
+                    </div>
+                </div>
             </div>
 
             <Outlet />
@@ -65,3 +84,68 @@ const Layoutchinna = () => {
 };
 
 export default Layoutchinna;
+
+
+const Drawer = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const drawerRef = useRef(null);
+
+    const toggleDrawer = () => {
+        setIsOpen(!isOpen);
+    };
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (drawerRef.current && !drawerRef.current.contains(event.target)) {
+                setIsOpen(false);
+            }
+        };
+
+        if (isOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isOpen]);
+
+    return (
+        <div>
+            <a onClick={toggleDrawer}  >  &#9776; MENU </a>
+            {isOpen && <div className="backdrop" onClick={toggleDrawer}></div>}
+            <div
+                ref={drawerRef}
+                className={`drawer drawer-left ${isOpen ? 'show' : ''}`}
+                tabIndex="-1"
+                role="dialog"
+                aria-labelledby="drawer-1-title"
+                aria-hidden={!isOpen}
+                id="drawer-1"
+            >
+                <div className="drawer-content drawer-content-scrollable" role="document">
+                    <div className="drawer-header">
+                        <p className="drawer-title" id="drawer-1-title" onClick={toggleDrawer} aria-label="Close">&times; Close </p>
+                    </div>
+                    <div className="drawer-body">
+                        <div style={{ textAlign: "end" }}>
+                            <p>Inspiring Greatness </p>
+                            <p>Models</p>
+                            <p>Bespoke</p>
+                            <p>Ownership</p>
+                            <p>Provenance</p>
+                            <p>Boutique</p>
+                            <p>Muse Arts Programme </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div >
+    );
+};
+
+
+

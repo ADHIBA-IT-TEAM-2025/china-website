@@ -8,15 +8,20 @@ import ChinnaHome from './componuents/B-HOME/homechina';
 
 function App() {
   return (
+    <>
 
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={<Layoutchinna />}>
-          <Route index element={<ChinnaHome />} />
-        </Route>
-      </Routes>
-    </HashRouter>
 
+      <HashRouter>
+        <Routes>
+          <Route path="/" element={<Layoutchinna />}>
+            <Route index element={<ChinnaHome />} />
+          </Route>
+        </Routes>
+      </HashRouter>
+
+   
+      
+    </>
   );
 }
 

@@ -11,147 +11,171 @@
     text-decoration: none;
     font-family: 'kabob';
     box-sizing: border-box;
-
 }
 
-.fullPageMenu {
-    position: relative;
-    z-index: 9999;
+/* ////navbar */
+.navbar-logo {
+    height: 45PX;
+    width: fit-content;
+    transition: height 0.3s ease;
 }
-.fullPageMenu {
-    position: fixed;
-    top: 0;
-    left: 0;
+
+.nav-cn-bg-main {
     width: 100%;
-    height: 100%;
+    position: fixed;
+    z-index: 1;
+    color: #ffffffcc;
+}
+
+.navbar-cn-bg-main {
+    width: 100%;
+    height: 120px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
     display: flex;
     justify-content: center;
+}
+
+.navbar-cn-bg-main-ul {
+    list-style: none;
+    display: flex;
     align-items: center;
-    background: #111;
+    justify-content: space-between;
+    width: 86%;
+    height: 100%;
+}
+
+.BgColour {
+    background-color: rgba(49, 48, 48, 0.692);
+}
+
+.menu-nav-cn {
+    font-weight: bolder;
+    letter-spacing: 0.1666666667em;
+    font-size: 1rem;
+    line-height: 2;
+    text-transform: uppercase;
+    position: relative;
+    border: none;
+    color: inherit;
+}
+
+
+/* /////////////////// */
+.overlay {
+    z-index: 9999;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    overflow-y: hidden;
     transition: 0.5s;
 }
 
-.fullPageMenu.active {
-    top: -100%;
+.close-form-nys-cn {
+    padding: 20px;
+    background-color: #002147;
 }
 
-.fullPageMenu .banner {
+.overlay-content {
     position: relative;
-    width: 800px;
-    height: 100%;
-}
-
-.fullPageMenu .banner img {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    text-align: center;
 }
 
-.fullPageMenu .nav {
+.over-header {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 80%;
-    height: 100%;
-    overflow-y: auto;
+    justify-content: center;
+    height: 5%;
+    background-color: #bbe06c;
 }
 
-.fullPageMenu .nav ul {
-    position: relative;
+.over-header a {
+    font-size: 40px;
+    color: #002147;
 }
 
-.fullPageMenu .nav ul li {
-    position: relative;
-    list-style: none;
-    padding: 0 20px;
-    margin: 5px 0;
-    overflow: hidden;
-    display: table;
-}
-
-.fullPageMenu .nav ul li:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #F8C723;
-    transition: transform 0.5s ease-in-out;
-    transform: scaleY(0);
-    transform-origin: bottom;
-}
-
-.fullPageMenu .nav ul li:hover:before {
-    transition: transform 0.5s ease-in-out;
-    transform: scaleY(1);
-    transform-origin: top;
-}
-
-.fullPageMenu .nav ul li a {
-    position: relative;
-    color: #fff;
+.overlay .closebtn {
     text-decoration: none;
-    font-size: 4em;
-    font-weight: 700;
-    line-height: 1em;
-    display: inline-block;
-    text-transform: uppercase;
-    transition: 0.5s ease-in-out;
-}
-
-.fullPageMenu .nav ul li a::before {
-    content: attr(data-text);
     position: absolute;
-    bottom: -100%;
-    left: 0;
-    color: #fff;
 }
 
-.fullPageMenu .nav ul li:hover a {
-    transform: translateY(-100%);
-    color: #fff;
-}
+@media screen and (max-height: 450px) {
+    .overlay {
+        overflow-y: auto;
+    }
 
-.menuicon {
-    position: fixed;
-    top: 20px;  
-    right: 20px;
-    width: 60px;
-    height: 40px;
-    cursor: pointer;
-}
+    .overlay a {
+        font-size: 20px
+    }
 
-.menuicon::before {
-    content: '\f0c9'; /* Unicode for Font Awesome bars icon */
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    font-size: 20px;
-    position: absolute;
-    color: #F8C723;
-    top: 10px;
-    left: 10px;
-}
-
-.menuicon.active::before {
-    content: '\f00d'; /* Unicode for Font Awesome times (close) icon */
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    font-size: 30px;
-    position: absolute;
-    top: 5px;
-    left: 10px;
-}
-
-@media(max-width:991px) {
-    .banner {
-        display: none;
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
     }
 }
 
+
+
+/* //////drawer */
+.drawer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 696px;
+    overflow-y: auto;
+    background-color: rgba(49, 48, 48, 0.521);
+    backdrop-filter: blur(8px);
+    transition: transform 0.8s ease;
+    z-index: 1020;
+    display: flex;
+    justify-content: center;
+}
+
+.drawer-left {
+    left: -696px;
+    transform: translateX(-696px);
+}
+
+.drawer.show {
+    transform: translateX(696px);
+}
+
+.drawer-header {
+    height: 5%;
+    padding: 1rem 5rem;
+}
+
+.drawer-body {
+    padding: 1rem;
+    height: 95%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.drawer-content-scrollable {
+    max-height: 100%;
+    overflow-y: auto;
+    width: 80%;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(49, 48, 48, 0.219);
+    backdrop-filter: blur(0.1px);
+    z-index: 1010;
+}
+
+.menu-text-nys-cn {
+    z-index: 9999;
+}
 
 
 
@@ -161,16 +185,10 @@
     padding: 10px;
 }
 
-.navbar-logo {
-    height: 40PX;
-    width: fit-content;
-}
-
-
 .footer-section {
     background: #F8C723;
     color: #000;
-    position: relative;
+
 }
 
 .footer-cta {
@@ -204,11 +222,6 @@
 .cta-text span {
     color: #000000;
     font-size: 15px;
-}
-
-.footer-content {
-    position: relative;
-    z-index: 2;
 }
 
 .footer-pattern img {
@@ -399,6 +412,245 @@
 
 
 
+/* /////////////// */
 
 
-/* /////////////////// */
+:root {
+    --ligthgreen: #bbe06c;
+    --darkgreen: #7db855be;
+}
+
+.form-body-cn {
+    font-family: "kabob";
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+
+
+    .container {
+        background-color: var(--ligthgreen);
+        border-radius: 20px;
+        position: relative;
+        overflow: hidden;
+        width: 1050px;
+        height: 750px;
+        max-width: 100%;
+        box-shadow: 5px 5px 10px 0px grey;
+        padding: 50px 0px;
+        text-align: center;
+        transition: transform 0.6s ease-in-out;
+    }
+
+    .container p {
+        font-size: 12px;
+        line-height: 20px;
+        letter-spacing: 0.3px;
+    }
+
+    .forgetpass {
+        margin-top: 20px;
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 10px;
+        width: 95px;
+        height: 40px;
+        border-radius: 15px;
+        background: #000;
+        color: white;
+        margin: 20px 0px;
+        border: none;
+        cursor: pointer;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .container button.hidden {
+        background-color: transparent;
+        color: black;
+    }
+
+    .icons .icon-form {
+        margin: 10px 3px 20px 3px;
+    }
+
+    .container form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100%;
+        padding: 0 40px;
+    }
+
+    input {
+        width: 100%;
+        height: 40px;
+        padding: 10px;
+        border-radius: 15px;
+        font-size: 14px;
+        margin: 10px 0px;
+        outline: none;
+        border: 2px solid white;
+    }
+
+    .passdiv {
+        width: 100%;
+        height: 43px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: white;
+        border-radius: 15px;
+        margin: 10px 0;
+    }
+
+    .passdiv .show-hide {
+        padding-right: 15px;
+        cursor: pointer;
+        transition: 0.2s ease;
+    }
+
+    .form_container {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        transition: all 0.6s ease-in-out;
+    }
+
+    .sign_in {
+        left: 0;
+        width: 50%;
+        z-index: 2;
+    }
+
+    .container.active .sign_in {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    .sign_up {
+        left: 0;
+        width: 50%;
+        opacity: 0;
+        z-index: 1;
+    }
+
+    .container.active .sign_up {
+        transform: translateX(100%);
+        opacity: 1;
+        z-index: 5;
+        animation: move 0.6s;
+    }
+
+    .text {
+        display: none;
+        padding: 0px 2px;
+        color: brown;
+    }
+
+    @keyframes move {
+
+        0%,
+        49.99% {
+            opacity: 0;
+            z-index: 1;
+        }
+
+        50%,
+        100% {
+            opacity: 1;
+            z-index: 5;
+        }
+    }
+
+    .toggle_container {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        transition: all 0.6s ease-in-out;
+        border-radius: 130px 0 0 130px;
+        z-index: 1000;
+    }
+
+    .container.active .toggle_container {
+        transform: translateX(-100%);
+        border-radius: 0 130px 130px 0;
+    }
+
+    .toggle {
+        background-color: var(--darkgreen);
+        height: 100%;
+        color: #fff;
+        position: relative;
+        left: -100%;
+        width: 200%;
+        transform: translateX(0);
+        transition: all 0.6s ease-in-out;
+    }
+
+    .toggle p {
+        padding-top: 20px;
+    }
+
+    .container.active .toggle {
+        transform: translateX(50%);
+    }
+
+    .toggle_panel {
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 30px;
+        text-align: center;
+        top: 0;
+        transform: translateX(0);
+        transition: all 0.6s ease-in-out;
+    }
+
+    .toggle_left {
+        transform: translateX(-200%);
+    }
+
+    .container.active .toggle_left {
+        transform: translateX(0);
+    }
+
+    .toggle_right {
+        right: 0;
+        transform: translateX(0);
+    }
+
+    .container.active .toggle_right {
+        transform: translateX(200%);
+    }
+
+    @media (max-width: 868px) {
+        .container {
+            width: 80%;
+            height: 370px;
+        }
+    }
+}

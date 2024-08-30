@@ -8,7 +8,6 @@ import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faPhone } from "@fortawesome/free-solid-svg-icons/faPhone";
-import logo2 from '../Z-IMAGE/nystai without tri.png';  // Import the second logo
 import { faBlog, faEnvelope, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons/faMapMarkedAlt";
 
@@ -16,7 +15,6 @@ import { faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons/faMapMarkedAlt
 export default function Footercn() {
     return (
         <>
-
             <footer class="footer-section">
                 <div class="container">
                     <div class="footer-cta pt-5 ">
@@ -64,6 +62,7 @@ export default function Footercn() {
                                     <div class="footer-social-icon">
                                         <span>Follow us</span>
                                         <ul class="social_icon">
+                                            <p><FontAwesomeIcon icon={faLinkedin} style={{ color: '#E1306C' }} className="ms-3" /></p>
                                             <p><FontAwesomeIcon icon={faInstagram} style={{ color: '#E1306C' }} className="ms-3" /></p>
                                             <p><FontAwesomeIcon icon={faWhatsapp} style={{ color: '#25D366' }} className="ms-3" /></p>
                                             <p><FontAwesomeIcon icon={faYoutube} style={{ color: '#FF0000' }} className="ms-3" /></p>
@@ -131,13 +130,8 @@ export default function Footercn() {
                             </div>
                         </div>
                     </div>
-
-
-                </div>
-
+               </div>
             </footer>
-
-
 
         </>
     )

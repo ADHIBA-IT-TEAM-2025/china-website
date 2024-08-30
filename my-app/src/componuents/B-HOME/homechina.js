@@ -107,7 +107,7 @@ export default function ChinnaHome() {
                         fontSize: "4.5em",
                         textAlign: "center",
                         textTransform: "uppercase",
-                        zIndex: 1,
+                        zIndex: 0,
                     }}>All Things Visual
                 </h1>
 
