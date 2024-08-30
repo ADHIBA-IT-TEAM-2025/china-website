@@ -8,9 +8,16 @@ import SplitType from 'split-type'; // For SplitType
 import { gsap } from 'gsap'; // For gsap animations
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // For FontAwesome icons
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons'; // For the specific icon
+import { Link } from 'react-router-dom';
 
 
 export default function ChinnaHome() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+
     const [hover, setHover] = useState("");
 
     const videoRef = useRef(null);
@@ -58,7 +65,7 @@ export default function ChinnaHome() {
             );
         };
 
-        // IntersectionObserver callback
+
         const observerCallback = (entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -67,9 +74,9 @@ export default function ChinnaHome() {
             });
         };
 
-        // Create IntersectionObserver
+
         const observer = new IntersectionObserver(observerCallback, {
-            threshold: 0.5, // Trigger when 50% of the section is visible
+            threshold: 0.5,
         });
 
         if (textRef.current) {
@@ -85,8 +92,7 @@ export default function ChinnaHome() {
 
     return (
         <>
-
-            <div style={{ position: "relative", width: "100%", height: "100%" }}>
+            <div style={{ position: "relative", width: "100%", height: "100%", marginBottom: "-10px" }}>
                 <video
                     src={landingv2}
                     autoPlay
@@ -110,11 +116,7 @@ export default function ChinnaHome() {
                         zIndex: 0,
                     }}>All Things Visual
                 </h1>
-
             </div>
-
-
-
 
             <div className={` chinasite-landing-page ${hover}`}>
                 <div
@@ -130,7 +132,8 @@ export default function ChinnaHome() {
                         <span className="hover-container">field support<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
                         <span className="hover-container">field support<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
                         <div className="button-right-left-cn">
-                            <button className="btn custom-btn mt-4" >Learn More</button>
+                            <button className="btn custom-btn mt-4" >
+                                <Link to="/techpage"> Learn More</Link></button>
                         </div>
                     </div>
                 </div>
@@ -147,14 +150,11 @@ export default function ChinnaHome() {
                         <span className="hover-container"> Custom figures<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
                         <span className="hover-container"> experiential marketing<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
                         <div className="button-right-left-cn">
-                            <button className="btn custom-btn mt-4" >Learn More</button>
+                            <button className="btn custom-btn mt-4" > <Link to="/scmpage"> Learn More</Link></button>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
 
             <section>
                 <div className="mini-block-statement w-clearfix">
@@ -167,8 +167,6 @@ export default function ChinnaHome() {
                     </p>
                 </div>
             </section>
-
-
 
             <Footercn />
         </>

@@ -10,7 +10,8 @@ import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faPhone } from "@fortawesome/free-solid-svg-icons/faPhone";
 import { faBlog, faEnvelope, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons/faMapMarkedAlt";
-
+import appstore1 from '../Z-IMAGE/appstore-1 (1).svg'
+import appstore2 from '../Z-IMAGE/appstore-1.svg'
 
 export default function Footercn() {
     return (
@@ -19,14 +20,14 @@ export default function Footercn() {
                 <div class="container">
                     <div class="footer-cta pt-5 ">
                         <div class="row">
-                           
+
                             <div class="col-xl-4 col-md-4 mb-30">
                                 <div class="single-cta">
                                     <FontAwesomeIcon icon={faMapMarkedAlt} className="custom-icon" />
                                     <div class="cta-text">
                                         <h4>Find us</h4>
-                                        <span>Akshya Nagar 1st Block 1st Cross,China-560016 </span>
-                                   </div>
+                                        <span>222 B-15, Building 4, Qidi Xiexin, No. 333, Longfei Avenue, Huanggekeng Community, Longcheng Street, Longgang District, Shenzhen City </span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-xl-4 col-md-4 mb-30">
@@ -34,7 +35,7 @@ export default function Footercn() {
                                     <FontAwesomeIcon icon={faPhone} className="custom-icon" />
                                     <div class="cta-text">
                                         <h4>Call us</h4>
-                                        <span>+91 1234567890</span>
+                                        <span>+91  81899 77700</span>
                                     </div>
                                 </div>
                             </div>
@@ -62,7 +63,7 @@ export default function Footercn() {
                                     <div class="footer-social-icon">
                                         <span>Follow us</span>
                                         <ul class="social_icon">
-                                            <p><FontAwesomeIcon icon={faLinkedin} style={{ color: '#E1306C' }} className="ms-3" /></p>
+                                            <p><FontAwesomeIcon icon={faLinkedin} style={{ color: '#E1306C' }} /></p>
                                             <p><FontAwesomeIcon icon={faInstagram} style={{ color: '#E1306C' }} className="ms-3" /></p>
                                             <p><FontAwesomeIcon icon={faWhatsapp} style={{ color: '#25D366' }} className="ms-3" /></p>
                                             <p><FontAwesomeIcon icon={faYoutube} style={{ color: '#FF0000' }} className="ms-3" /></p>
@@ -72,7 +73,6 @@ export default function Footercn() {
                                             <p><FontAwesomeIcon icon={faXTwitter} style={{ color: '#fff' }} className="ms-3" /></p>
                                             <p><FontAwesomeIcon icon={faBlog} style={{ color: '#000' }} className="ms-3" /></p>
                                             <p><FontAwesomeIcon icon={faEnvelope} style={{ color: '#3e65cf' }} className="ms-3" /></p>
-
                                         </ul>
                                     </div>
                                 </div>
@@ -100,10 +100,15 @@ export default function Footercn() {
                                     <div class="footer-widget-heading">
                                         <h3>Subscribe</h3>
                                     </div>
-                                    <div class="footer-text mb-25">
+                                    <div class="footer-text ">
                                         <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                                        <a className="me-4" href="https://play.google.com/store/apps/details?id=com.sdfornystalnew&pcampaignid=web_share" target="_blank" rel="noreferrer">
+                                        <img class="news-app-promo__app-store" src={appstore2} width="161" height="" border="0" alt="nys-img" />
+                                        </a>
+                                        <a href="https://apps.apple.com/in/app/nystai/id6503040541" target="_blank" rel="noreferrer">
+                                        <img class="news-app-promo__play-store" src={appstore1} width="161" height="" border="0" alt="nys-img" />
+                                        </a>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -130,7 +135,7 @@ export default function Footercn() {
                             </div>
                         </div>
                     </div>
-               </div>
+                </div>
             </footer>
 
         </>

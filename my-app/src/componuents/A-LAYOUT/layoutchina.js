@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import './nav.css';
 import logo1 from '../Z-IMAGE/triangle (6).png';
 import logo2 from '../Z-IMAGE/nystai without tri.png';
@@ -11,6 +11,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const Layoutchinna = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
 
     const [isOpen2, setIsOpen2] = useState(false);
     const [logo, setLogo] = useState(logo1); // State to manage the logo
@@ -54,7 +59,7 @@ const Layoutchinna = () => {
                             <Drawer />
                         </li>
                         <li>
-                            <img src={logo} alt="Logo" className="navbar-logo" />
+                            <Link to="landing"> <img src={logo} alt="Logo" className="navbar-logo" /></Link>
                         </li>
                         <li>
                             <span onClick={toggleOverlay2}>

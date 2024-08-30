@@ -4,6 +4,8 @@ import 'bootstrap/dist/js/bootstrap.js';
 import { Routes, Route, HashRouter } from 'react-router-dom';
 import Layoutchinna from './componuents/A-LAYOUT/layoutchina';
 import ChinnaHome from './componuents/B-HOME/homechina';
+import Technology from './componuents/C-TYPES/Technology';
+import Supplychain from './componuents/C-TYPES/SCM';
 
 
 function App() {
@@ -15,12 +17,15 @@ function App() {
         <Routes>
           <Route path="/" element={<Layoutchinna />}>
             <Route index element={<ChinnaHome />} />
+            <Route path='landing' element={<ChinnaHome />} />
+             <Route path="techpage" element={<Technology />} />
+            <Route path="scmpage" element={<Supplychain />} /> 
           </Route>
         </Routes>
       </HashRouter>
 
-   
-      
+
+
     </>
   );
 }
