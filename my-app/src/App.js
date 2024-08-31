@@ -12,19 +12,16 @@ function App() {
   return (
     <>
 
-
       <HashRouter>
         <Routes>
           <Route path="/" element={<Layoutchinna />}>
             <Route index element={<ChinnaHome />} />
             <Route path='landing' element={<ChinnaHome />} />
-             <Route path="techpage" element={<Technology />} />
-            <Route path="scmpage" element={<Supplychain />} /> 
+            <Route path="techpage" element={<Technology />} />
+            <Route path="scmpage" element={<Supplychain />} />
           </Route>
         </Routes>
       </HashRouter>
-
-
 
     </>
   );

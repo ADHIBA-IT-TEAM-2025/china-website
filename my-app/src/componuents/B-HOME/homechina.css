@@ -10,7 +10,7 @@ a {
 
 /* ///// */
 .mini-block-statement {
-    background-color: #f7f7f7;
+    background-color: #eceaea;
     text-align: center;
     flex-direction: column;
     justify-content: center;
@@ -27,7 +27,7 @@ a {
     color: #000000;
     margin-top: 0;
     margin-bottom: 0;
-    font-family: kabob;
+    font-family: "kabob";
     font-size: 5rem;
     font-weight: 400;
     line-height: 100%;
@@ -38,7 +38,7 @@ a {
     text-align: left;
     text-transform: uppercase;
     margin: 0;
-    font-family: kabob;
+    font-family: "kabob";
     font-size: 3.5rem;
     font-weight: 400;
     line-height: 100%;
@@ -63,7 +63,7 @@ a {
 }
 
 .content {
-    position: fixed;
+    position: "fixed";
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
     color: #f1f1f1;

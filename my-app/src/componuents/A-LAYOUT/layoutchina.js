@@ -1,26 +1,23 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, Outlet } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 import './nav.css';
 import logo1 from '../Z-IMAGE/triangle (6).png';
 import logo2 from '../Z-IMAGE/nystai without tri.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleUser, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
+import { faCircleUser, faCircleXmark, faEarthOceania } from "@fortawesome/free-solid-svg-icons";
 import Formcn from "../A-LAYOUT/form";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
 const Layoutchinna = () => {
+    const { t, i18n } = useTranslation(); // Initialize translation
+    const [isOpen2, setIsOpen2] = useState(false);
+    const [logo, setLogo] = useState(logo1);
+    const [navbarHeight, setNavbarHeight] = useState(80);
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-
-
-    const [isOpen2, setIsOpen2] = useState(false);
-    const [logo, setLogo] = useState(logo1); // State to manage the logo
-    const [navbarHeight, setNavbarHeight] = useState(80); // State to manage navbar height
-
 
     const toggleOverlay2 = () => {
         setIsOpen2(!isOpen2);
@@ -32,12 +29,12 @@ const Layoutchinna = () => {
 
         if (scroll < 200) {
             navbar.classList.remove('BgColour');
-            setLogo(logo1); // Set logo to logo1 when scroll is less than 200
-            setNavbarHeight(120); // Set navbar height to 80px when scroll is less than 200
+            setLogo(logo1);
+            setNavbarHeight(120);
         } else {
             navbar.classList.add('BgColour');
-            setLogo(logo2); // Change logo to logo2 when scrolled down
-            setNavbarHeight(70); // Change navbar height to 40px when scrolled down
+            setLogo(logo2);
+            setNavbarHeight(70);
         }
     };
 
@@ -48,13 +45,18 @@ const Layoutchinna = () => {
         };
     }, []);
 
+    // Language toggle function
+    const changeLanguage = () => {
+        const currentLanguage = i18n.language;
+        const newLanguage = currentLanguage === 'en' ? 'cn' : 'en'; // Toggle between 'en' and 'cn'
+        i18n.changeLanguage(newLanguage);
+    };
+
     return (
         <>
-
             <div className="nav-cn-bg-main">
                 <div id="navbar" className="navbar-cn-bg-main" style={{ height: `${navbarHeight}px` }}>
-                    <ul className=" navbar-cn-bg-main-ul">
-
+                    <ul className="navbar-cn-bg-main-ul">
                         <li className="menu-nav-cn n">
                             <Drawer />
                         </li>
@@ -62,15 +64,14 @@ const Layoutchinna = () => {
                             <Link to="landing"> <img src={logo} alt="Logo" className="navbar-logo" /></Link>
                         </li>
                         <li>
+                            <FontAwesomeIcon icon={faEarthOceania} className="me-3" style={{fontSize:"20px"}} spin onClick={changeLanguage} />
                             <span onClick={toggleOverlay2}>
-                                <FontAwesomeIcon icon={faCircleUser} /> CONTACT
+                                <FontAwesomeIcon icon={faCircleUser} /> {t('contact')}
                             </span>
                         </li>
-
                     </ul>
                 </div>
             </div>
-
 
             <div>
                 <div id="myNav" className="overlay" style={{ height: isOpen2 ? '100%' : '0%' }}>
@@ -90,10 +91,10 @@ const Layoutchinna = () => {
 
 export default Layoutchinna;
 
-
 const Drawer = () => {
     const [isOpen, setIsOpen] = useState(false);
     const drawerRef = useRef(null);
+    const { t } = useTranslation();
 
     const toggleDrawer = () => {
         setIsOpen(!isOpen);
@@ -119,7 +120,7 @@ const Drawer = () => {
 
     return (
         <div>
-            <a onClick={toggleDrawer}  >  &#9776; MENU </a>
+            <a onClick={toggleDrawer}>  &#9776; {t('menu')} </a>
             {isOpen && <div className="backdrop" onClick={toggleDrawer}></div>}
             <div
                 ref={drawerRef}
@@ -132,25 +133,21 @@ const Drawer = () => {
             >
                 <div className="drawer-content drawer-content-scrollable" role="document">
                     <div className="drawer-header">
-                        <p className="drawer-title" id="drawer-1-title" onClick={toggleDrawer} aria-label="Close">&times; Close </p>
+                        <p className="drawer-title" id="drawer-1-title" onClick={toggleDrawer} aria-label="Close">&times; {t('CLOSE')}</p>
                     </div>
                     <div className="drawer-body">
                         <div style={{ textAlign: "end" }}>
-                            <p>Inspiring Greatness </p>
-                            <p>Models</p>
-                            <p>Bespoke</p>
-                            <p>Ownership</p>
-                            <p>Provenance</p>
-                            <p>Boutique</p>
-                            <p>Muse Arts Programme </p>
+                            <p>{t('inspiringGreatness')}</p>
+                            <p>{t('models')}</p>
+                            <p>{t('bespoke')}</p>
+                            <p>{t('ownership')}</p>
+                            <p>{t('provenance')}</p>
+                            <p>{t('boutique')}</p>
+                            <p>{t('museArtsProgramme')}</p>
                         </div>
                     </div>
-
                 </div>
             </div>
-        </div >
+        </div>
     );
 };
-
-
-

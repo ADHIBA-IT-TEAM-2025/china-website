@@ -1,22 +1,21 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import './homechina.css';
 import landingv2 from '../Z-IMAGE/755-450.mp4';
 import $ from 'jquery';
 import Footercn from "../A-LAYOUT/Footercn";
-import { useEffect } from 'react'; // For useEffect hook
 import SplitType from 'split-type'; // For SplitType
 import { gsap } from 'gsap'; // For gsap animations
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // For FontAwesome icons
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons'; // For the specific icon
 import { Link } from 'react-router-dom';
-
+import { useTranslation } from 'react-i18next'; // Import useTranslation hook
 
 export default function ChinnaHome() {
+    const { t, i18n } = useTranslation(); // Initialize the useTranslation hook
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-
 
     const [hover, setHover] = useState("");
 
@@ -33,7 +32,6 @@ export default function ChinnaHome() {
         }
     };
 
-
     $(window).scroll(function () {
         if ($(document).scrollTop() > 50) {
             $('.nav').addClass('affix');
@@ -43,13 +41,10 @@ export default function ChinnaHome() {
         }
     });
 
-
-
     const textRef = useRef(null);
 
     useEffect(() => {
         const myText = new SplitType(textRef.current);
-
 
         const animateText = () => {
             gsap.fromTo(
@@ -65,7 +60,6 @@ export default function ChinnaHome() {
             );
         };
 
-
         const observerCallback = (entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -73,7 +67,6 @@ export default function ChinnaHome() {
                 }
             });
         };
-
 
         const observer = new IntersectionObserver(observerCallback, {
             threshold: 0.5,
@@ -114,56 +107,83 @@ export default function ChinnaHome() {
                         textAlign: "center",
                         textTransform: "uppercase",
                         zIndex: 0,
-                    }}>All Things Visual
+                    }}>{t('allThingsVisual')}
                 </h1>
             </div>
 
-            <div className={` chinasite-landing-page ${hover}`}>
+            <div className={`chinasite-landing-page ${hover}`}>
                 <div
                     className="split right"
                     onMouseEnter={() => setHover("hover-right")}
                     onMouseLeave={() => setHover("")}
                 >
                     <div className="hoverrrr">
-                        <h6 className="mb-5">TECHNOLOGIES</h6>
-                        <span className="hover-container"> Digital signage<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
-                        <span className="hover-container">content manager<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
-                        <span className="hover-container"> creative services<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
-                        <span className="hover-container">field support<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
-                        <span className="hover-container">field support<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
+                        <h6 className="mb-5">{t('technologies')}</h6>
+                        <span className="hover-container">
+                            {t('digitalSignage')}
+                            <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" />
+                        </span>
+                        <span className="hover-container">
+                            {t('contentManager')}
+                            <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" />
+                        </span>
+                        <span className="hover-container">
+                            {t('creativeServices')}
+                            <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" />
+                        </span>
+                        <span className="hover-container">
+                            {t('fieldSupport')}
+                            <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" />
+                        </span>
                         <div className="button-right-left-cn">
-                            <button className="btn custom-btn mt-4" >
-                                <Link to="/techpage"> Learn More</Link></button>
+                            <button className="btn custom-btn mt-4">
+                                <Link to="/techpage">{t('learnMore')}</Link>
+                            </button>
                         </div>
                     </div>
                 </div>
                 <div
                     className="split left"
                     onMouseEnter={() => setHover("hover-left")}
-                    onMouseLeave={() => setHover("")} nonce=""
+                    onMouseLeave={() => setHover("")}
                 >
                     <div className="hoverrrr">
-                        <h6 className="mb-5">SUPPLY CHAIN MANAGEMENT </h6>
-                        <span className="hover-container"> Large Format<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
-                        <span className="hover-container"> Commercial Printing<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
-                        <span className="hover-container">turn - key systems<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
-                        <span className="hover-container"> Custom figures<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
-                        <span className="hover-container"> experiential marketing<FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" /></span>
+                        <h6 className="mb-5">{t('supplyChainManagement')}</h6>
+                        <span className="hover-container">
+                            {t('largeFormat')}
+                            <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" />
+                        </span>
+                        <span className="hover-container">
+                            {t('commercialPrinting')}
+                            <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" />
+                        </span>
+                        <span className="hover-container">
+                            {t('turnKeySystems')}
+                            <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" />
+                        </span>
+                        <span className="hover-container">
+                            {t('customFigures')}
+                            <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" />
+                        </span>
+                        <span className="hover-container">
+                            {t('experientialMarketing')}
+                            <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" />
+                        </span>
                         <div className="button-right-left-cn">
-                            <button className="btn custom-btn mt-4" > <Link to="/scmpage"> Learn More</Link></button>
+                            <button className="btn custom-btn mt-4">
+                                <Link to="/scmpage">{t('learnMore')}</Link>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
 
+
             <section>
                 <div className="mini-block-statement w-clearfix">
-                    <h2 className="heading-34">Our Mission</h2>
+                    <h2 className="heading-34">{t('ourMission')}</h2>
                     <p className="text-block-60">
-                        At NYSTAI, we specialize in creating memorable experiences through strategy,
-                        content, innovation and technology. We transform physical and digital spaces
-                        to create unforgettable moments with updated trends and innovation to provide
-                        visual solutions for our partners - continuing to provide<br /> All Things Visual.
+                        {t('missionDescription')}
                     </p>
                 </div>
             </section>

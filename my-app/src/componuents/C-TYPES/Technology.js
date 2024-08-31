@@ -1,5 +1,5 @@
-import React from "react";
-import { useEffect } from 'react';
+import React, { useEffect } from "react";
+import { useTranslation } from 'react-i18next';  // Import useTranslation hook
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // USED ITEMS
@@ -12,6 +12,7 @@ import techbanner2 from "../Z-IMAGE/tech-6.png"
 import Footercn from "../A-LAYOUT/Footercn";
 
 export default function Technology() {
+    const { t } = useTranslation();  // Initialize translation
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -20,43 +21,39 @@ export default function Technology() {
     return (
         <>
             {/* BANNER */}
-            <div class="card  text-danger" style={{ border: "none", outline: "none" }}>
-                <img src={techbanner} class="card-img" alt="..." />
-                <div class="card-img-overlay container" style={{ display: "flex", justifyContent: "center", flexDirection: "column", top: "-100px" }}>
-                    <h5 class="card-title" style={{ fontSize: "3.25rem" }}>Technology application </h5>
-                    <p class="card-text" style={{ fontSize: "1.2rem" }}>This is a wider card with supporting text below as a natural lead-in to <br />additional content.  </p>
-                    <p class="card-text" style={{ color: "transparent" }}>Last updated 3 mins ago</p>
+            <div className="card text-danger" style={{ border: "none", outline: "none" }}>
+                <img src={techbanner} className="card-img" alt="..." />
+                <div className="card-img-overlay container" style={{ display: "flex", justifyContent: "center", flexDirection: "column", top: "-100px" }}>
+                    <h5 className="card-title" style={{ fontSize: "3.25rem" }}>{t('technologyApplication')}</h5>
+                    <p className="card-text" style={{ fontSize: "1.2rem" }}>{t('bannerText')}</p>
                 </div>
             </div>
 
             {/* LEFT AND RIGHT CARD */}
             <section className="container-fluid">
-                <div className=" col-12">
-                    <h1 className="text-center" style={{ fontSize: "3.25rem" }}>Technology</h1>
+                <div className="col-12">
+                    <h1 className="text-center" style={{ fontSize: "3.25rem" }}>{t('technologyTitle')}</h1>
                     <div className="row mt-5" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-
                         <div className="col-lg-6">
                             <img src={leftimg} className="img-fluid" style={{ height: "60vh", width: "fit-content" }} />
                         </div>
                         <div className="col-lg-6">
                             <div className="col-lg-8" style={{ marginLeft: "7%" }}>
-                                <h3 style={{ fontSize: "2.6rem" }} >Technology application</h3>
-                                <p >This is a wider card with supporting text below as a natural lead-in to additional content.This is a wider card with supporting text below as a natural lead-in to additional content.This is a wider card with supporting text below as a natural lead-in to additional content.This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                                <h3 style={{ fontSize: "2.6rem" }}>{t('technologyApplication')}</h3>
+                                <p>{t('contentText')}</p>
                             </div>
                         </div>
                     </div>
                     <div className="row" style={{ display: "flex", justifyContent: "center", alignItems: "center", marginTop: "-50px" }}>
-
                         <div className="col-lg-6">
                             <div className="col-lg-8" style={{ marginLeft: "18%", marginTop: "20%" }}>
-                                <h3 style={{ fontSize: "2.6rem" }} >Technology application</h3>
-                                <p >This is a wider card with supporting text below as a natural lead-in to additional content.This is a wider card with supporting text below as a natural lead-in to additional content.This is a wider card with supporting text below as a natural lead-in to additional content.This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                                <h3 style={{ fontSize: "2.6rem" }}>{t('technologyApplication')}</h3>
+                                <p>{t('contentText')}</p>
                             </div>
                         </div>
                         <div className="col-lg-6">
                             <img src={rightimg} className="img-fluid" style={{ height: "60vh", width: "fit-content" }} />
                         </div>
-
                     </div>
                 </div>
             </section>
@@ -70,26 +67,24 @@ export default function Technology() {
                         </div>
                         <div className="col-lg-6 mt-5">
                             <div className="col-lg-10 mt-5">
-                                <h1 className="pb-3">We are Building on SHENZHEN NYSTAI</h1>
-
-                                <p >This is a wider card with supporting text below as a natural lead-in to additional content.This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                                <h1 className="pb-3">{t('buildingShenzhen')}</h1>
+                                <p>{t('shortContentText')}</p>
                             </div>
                             <div className="pt-2">
-                                <button className="btn btn-warning p-3">Learn More</button>
+                                <button className="btn btn-warning p-3">{t('learnMore')}</button>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
 
             {/* BOX CARD 2 */}
-            <div className="mt-5" >
-                <div class="card container text-center text-danger" style={{ border: "none", outline: "none" }}>
+            <div className="mt-5">
+                <div className="card container text-center text-danger" style={{ border: "none", outline: "none" }}>
                     <img src={imgbg} className="img-fluid" />
-                    <div class="card-img-overlay" style={{ marginTop: "18.5%" }}>
-                        <h5 class="card-title" style={{ fontSize: "3rem" }}>Manufacture your Product</h5>
-                        <p class="card-text ">This is a wider card with supporting text below as a natural lead-in to additional <br />content. This content is a little bit longer.</p>
+                    <div className="card-img-overlay" style={{ marginTop: "18.5%" }}>
+                        <h5 className="card-title" style={{ fontSize: "3rem" }}>{t('manufactureProduct')}</h5>
+                        <p className="card-text">{t('longContentText')}</p>
                     </div>
                 </div>
             </div>
