@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { useTranslation } from 'react-i18next';  // Import useTranslation hook
-// USED ITEMS
+import { useTranslation } from 'react-i18next';  //  useTranslation hook
+// USED 
 import techbannerscm from "../Z-IMAGE/SCM (1).png";
 import leftimgscm from "../Z-IMAGE/SCM (2).png";
 import rightimgscm from "../Z-IMAGE/SCM (3).png";
@@ -9,7 +9,7 @@ import Footercn from "../A-LAYOUT/Footercn";
 import Form from "../A-LAYOUT/form";
 
 export default function Supplychain() {
-    const { t } = useTranslation();  // Initialize translation
+    const { t } = useTranslation();   
 
     useEffect(() => {
         window.scrollTo(0, 0);  

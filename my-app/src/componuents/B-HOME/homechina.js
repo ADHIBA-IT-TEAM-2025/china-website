@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import './homechina.css';
+import '../CSS/homechina.css';
 import landingv2 from '../Z-IMAGE/755-450.mp4';
 import $ from 'jquery';
 import Footercn from "../A-LAYOUT/Footercn";

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
-import './nav.css';
+import '../CSS/nav.css';
 import logo1 from '../Z-IMAGE/triangle (6).png';
 import logo2 from '../Z-IMAGE/nystai without tri.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -48,7 +48,7 @@ const Layoutchinna = () => {
     // Language toggle function
     const changeLanguage = () => {
         const currentLanguage = i18n.language;
-        const newLanguage = currentLanguage === 'en' ? 'cn' : 'en'; // Toggle between 'en' and 'cn'
+        const newLanguage = currentLanguage === 'en' ? 'cn' : 'en'; 
         i18n.changeLanguage(newLanguage);
     };
 

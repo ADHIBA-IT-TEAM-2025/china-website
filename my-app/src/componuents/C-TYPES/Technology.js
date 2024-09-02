@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
-import { useTranslation } from 'react-i18next';  // Import useTranslation hook
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslation } from 'react-i18next'; 
 // USED ITEMS
 import techbanner from "../Z-IMAGE/tech-landing.png"
 import leftimg from "../Z-IMAGE/tech-2.png"
@@ -12,7 +10,7 @@ import techbanner2 from "../Z-IMAGE/tech-6.png"
 import Footercn from "../A-LAYOUT/Footercn";
 
 export default function Technology() {
-    const { t } = useTranslation();  // Initialize translation
+    const { t } = useTranslation(); 
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -99,3 +97,5 @@ export default function Technology() {
         </>
     )
 }
+
+

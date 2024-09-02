@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import './nav.css';
+import '../CSS/nav.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGooglePlusG, faFacebook, faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { faLock, faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
-import { useTranslation } from 'react-i18next'; // Import useTranslation hook
+import { useTranslation } from 'react-i18next';
 
 export default function Form() {
-    const { t } = useTranslation(); // Initialize translation
+    const { t } = useTranslation(); 
     const [isSignUpActive, setIsSignUpActive] = useState(false);
     const handleSignUpClick = () => setIsSignUpActive(true);
     const handleSignInClick = () => setIsSignUpActive(false);
