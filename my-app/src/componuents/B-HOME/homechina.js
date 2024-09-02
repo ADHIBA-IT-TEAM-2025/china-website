@@ -3,15 +3,15 @@ import '../CSS/homechina.css';
 import landingv2 from '../Z-IMAGE/755-450.mp4';
 import $ from 'jquery';
 import Footercn from "../A-LAYOUT/Footercn";
-import SplitType from 'split-type'; // For SplitType
-import { gsap } from 'gsap'; // For gsap animations
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // For FontAwesome icons
-import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons'; // For the specific icon
+import SplitType from 'split-type'; 
+import { gsap } from 'gsap'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
+import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons'; 
 import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next'; // Import useTranslation hook
+import { useTranslation } from 'react-i18next'; 
 
 export default function ChinnaHome() {
-    const { t, i18n } = useTranslation(); // Initialize the useTranslation hook
+    const { t, i18n } = useTranslation()
 
     useEffect(() => {
         window.scrollTo(0, 0);
