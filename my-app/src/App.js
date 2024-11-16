@@ -14,12 +14,12 @@ function App() {
 
       <HashRouter>
         <Routes>
-          <Route path="/" element={<Layoutchinna />}>
-            <Route index element={<ChinnaHome />} />
-            <Route path='landing' element={<ChinnaHome />} />
-            <Route path="techpage" element={<Technology />} />
-            <Route path="scmpage" element={<Supplychain />} />
-          </Route>
+          <Route path="/" element={<Layoutchinna />}></Route>
+          <Route index element={<ChinnaHome />} />
+          <Route path='landing' element={<ChinnaHome />} />
+          <Route path="techpage" element={<Technology />} />
+          <Route path="scmpage" element={<Supplychain />} />
+
         </Routes>
       </HashRouter>
 

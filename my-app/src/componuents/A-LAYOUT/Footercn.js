@@ -2,52 +2,55 @@ import React from "react";
 import '../CSS/nav.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTelegramPlane, faWhatsapp, faYoutube, faInstagram, faTwitter, faFacebook, faXTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faPhone, faBlog, faEnvelope, faSearch, faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faBlog, faEnvelope, faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons";
 import appstore1 from '../Z-IMAGE/appstore-1 (1).svg';
 import appstore2 from '../Z-IMAGE/appstore-1.svg';
 import { useTranslation } from 'react-i18next';
 
 export default function Footercn() {
+
     const { t } = useTranslation();
 
     return (
         <>
             <footer className="footer-section">
                 <div className="container">
+                    
                     <div className="footer-cta pt-5">
                         <div className="row">
-                            <div className="col-xl-4 col-md-4 mb-30">
+                            <div className="col-xl-4 col-md-4 ">
                                 <div className="single-cta">
-                                    <FontAwesomeIcon icon={faMapMarkedAlt} className="custom-icon" />
+
                                     <div className="cta-text">
-                                        <h4>{t('findUs')}</h4>
-                                        <span>{t('address')}</span>
+                                        <h4>   <FontAwesomeIcon icon={faMapMarkedAlt} className="custom-icon me-3" />{t('findUs')}</h4>
+                                        <span >{t('address')}</span>
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-xl-4 col-md-4 mb-30">
+                            <div className="col-xl-4 col-md-4 ">
                                 <div className="single-cta">
-                                    <FontAwesomeIcon icon={faPhone} className="custom-icon" />
+
                                     <div className="cta-text">
-                                        <h4>{t('callUs')}</h4>
+                                        <h4>  <FontAwesomeIcon icon={faPhone} className="custom-icon me-3" />{t('callUs')}</h4>
                                         <span>{t('phoneNumber')}</span>
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-xl-4 col-md-4 mb-30">
+                            <div className="col-xl-4 col-md-4 ">
                                 <div className="single-cta">
-                                    <FontAwesomeIcon icon={faEnvelope} className="custom-icon" />
+
                                     <div className="cta-text">
-                                        <h4>{t('mailUs')}</h4>
+                                        <h4>  <FontAwesomeIcon icon={faEnvelope} className="custom-icon me-3" />{t('mailUs')}</h4>
                                         <span>{t('emailAddress')}</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="footer-content pt-5 pb-1">
+                    
+                    <div className="footer-content pt-5 ">
                         <div className="row">
-                            <div className="col-xl-4 col-lg-4 mb-50">
+                            <div className="col-xl-4 col-lg-4">
                                 <div className="footer-widget">
                                     <div className="footer-widget-heading">
                                         <h3>{t('description')}</h3>
@@ -72,7 +75,7 @@ export default function Footercn() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-xl-4 col-lg-4 col-md-6 mb-30">
+                            <div className="col-xl-4 col-lg-4 col-md-6 ">
                                 <div className="footer-widget">
                                     <div className="footer-widget-heading">
                                         <h3>{t('usefulLinks')}</h3>
@@ -108,6 +111,8 @@ export default function Footercn() {
                             </div>
                         </div>
                     </div>
+
+
                     <hr className="" />
                     <div className="container">
                         <div className="row">
@@ -129,8 +134,10 @@ export default function Footercn() {
                             </div>
                         </div>
                     </div>
+
                 </div>
             </footer>
+
         </>
     );
 }

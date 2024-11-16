@@ -6,23 +6,25 @@ import { faLock, faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
 
 export default function Form() {
-    const { t } = useTranslation(); 
+
+    const { t } = useTranslation();
     const [isSignUpActive, setIsSignUpActive] = useState(false);
     const handleSignUpClick = () => setIsSignUpActive(true);
     const handleSignInClick = () => setIsSignUpActive(false);
 
     return (
         <>
+
             <body className='form-body-cn'>
                 <div className={`container ${isSignUpActive ? 'active' : ''}`}>
                     <div className="sign_up form_container">
                         <form>
                             <h1>{t('createAccount')}</h1>
                             <div className="icons">
-                                <a href="#"><FontAwesomeIcon className='icon-form' icon={faGooglePlusG} /></a>
-                                <a href="#"><FontAwesomeIcon className='icon-form' icon={faFacebook} /></a>
-                                <a href="#"><FontAwesomeIcon className='icon-form' icon={faGithub} /></a>
-                                <a href="#"><FontAwesomeIcon className='icon-form' icon={faLinkedinIn} /></a>
+                                <a><FontAwesomeIcon className='icon-form' icon={faGooglePlusG} /></a>
+                                <a><FontAwesomeIcon className='icon-form' icon={faFacebook} /></a>
+                                <a><FontAwesomeIcon className='icon-form' icon={faGithub} /></a>
+                                <a><FontAwesomeIcon className='icon-form' icon={faLinkedinIn} /></a>
                             </div>
                             <p>{t('useEmailForRegistration')}</p>
                             <input className="name" type="text" placeholder={t('name')} />
@@ -42,10 +44,10 @@ export default function Form() {
                         <form>
                             <h1>{t('signIn')}</h1>
                             <div className="icons">
-                                <a href="#"><FontAwesomeIcon className='icon-form' icon={faGooglePlusG} /></a>
-                                <a href="#"><FontAwesomeIcon className='icon-form' icon={faFacebook} /></a>
-                                <a href="#"><FontAwesomeIcon className='icon-form' icon={faGithub} /></a>
-                                <a href="#"><FontAwesomeIcon className='icon-form' icon={faLinkedinIn} /></a>
+                                <a><FontAwesomeIcon className='icon-form' icon={faGooglePlusG} /></a>
+                                <a><FontAwesomeIcon className='icon-form' icon={faFacebook} /></a>
+                                <a><FontAwesomeIcon className='icon-form' icon={faGithub} /></a>
+                                <a><FontAwesomeIcon className='icon-form' icon={faLinkedinIn} /></a>
                             </div>
                             <p>{t('useEmailPassword')}</p>
                             <input className="email1" type="email" placeholder={t('email')} />
@@ -65,17 +67,18 @@ export default function Form() {
                             <div className="toggle_panel toggle_left">
                                 <h1>{t('welcomeBack')}</h1>
                                 <p>{t('enterDetailsForAllFeatures')}</p>
-                                <button className="hidden" onClick={handleSignInClick}>{t('signIn')}</button>
+                                <button className=" button hidden" onClick={handleSignInClick}>{t('signIn')}</button>
                             </div>
                             <div className="toggle_panel toggle_right">
                                 <h1>{t('helloFriend')}</h1>
                                 <p>{t('registerForAllFeatures')}</p>
-                                <button className="hidden" onClick={handleSignUpClick}>{t('signUp')}</button>
+                                <button className=" button hidden" onClick={handleSignUpClick}>{t('signUp')}</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </body>
+
         </>
     );
 }

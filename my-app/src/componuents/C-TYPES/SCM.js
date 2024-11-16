@@ -7,16 +7,20 @@ import rightimgscm from "../Z-IMAGE/SCM (3).png";
 import techbanner2 from "../Z-IMAGE/tech-6.png";
 import Footercn from "../A-LAYOUT/Footercn";
 import Form from "../A-LAYOUT/form";
+import Layoutchinna from "../A-LAYOUT/layoutchina";
 
 export default function Supplychain() {
-    const { t } = useTranslation();   
+    const { t } = useTranslation();
 
     useEffect(() => {
-        window.scrollTo(0, 0);  
+        window.scrollTo(0, 0);
     }, []);
 
     return (
         <>
+
+            <Layoutchinna />
+
             {/* BANNER */}
             <div className="card text-warning" style={{ border: "none", outline: "none" }}>
                 <img src={techbannerscm} className="card-img" alt="..." />
@@ -37,21 +41,36 @@ export default function Supplychain() {
                         <div className="col-lg-6">
                             <div className="col-lg-8" style={{ marginLeft: "7%" }}>
                                 <h3 style={{ fontSize: "2.6rem" }}>{t('supplyChainApplication')}</h3>
-                                <p>{t('contentText')}</p>
+                                <p>{t('contentTextscm1')}</p>
                             </div>
                         </div>
                     </div>
+
                     <div className="row" style={{ display: "flex", justifyContent: "center", alignItems: "center", marginTop: "-50px" }}>
                         <div className="col-lg-6">
                             <div className="col-lg-8" style={{ marginLeft: "18%", marginTop: "20%" }}>
-                                <h3 style={{ fontSize: "2.6rem" }}>{t('supplyChainApplication')}</h3>
-                                <p>{t('contentText')}</p>
+                                <h3 style={{ fontSize: "2.6rem" }}>{t('supplyChainApplication2')}</h3>
+                                <p>{t('contentTextscm2')}</p>
                             </div>
                         </div>
                         <div className="col-lg-6">
                             <img src={rightimgscm} className="img-fluid" style={{ height: "60vh", width: "fit-content" }} />
                         </div>
                     </div>
+
+
+                    <div className="row mt-5" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                        <div className="col-lg-6">
+                            <img src={leftimgscm} className="img-fluid" style={{ height: "60vh", width: "fit-content" }} />
+                        </div>
+                        <div className="col-lg-6">
+                            <div className="col-lg-8" style={{ marginLeft: "7%" }}>
+                                <h3 style={{ fontSize: "2.6rem" }}>{t('supplyChainApplication3')}</h3>
+                                <p>{t('contentTextscm3')}</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </section>
 

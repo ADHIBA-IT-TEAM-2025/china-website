@@ -8,11 +8,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser, faCircleXmark, faEarthOceania } from "@fortawesome/free-solid-svg-icons";
 import Formcn from "../A-LAYOUT/form";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Dropdown from 'react-bootstrap/Dropdown';
+
 
 const Layoutchinna = () => {
-    const { t, i18n } = useTranslation(); // Initialize translation
+
+    const { t, i18n } = useTranslation();
     const [isOpen2, setIsOpen2] = useState(false);
-    const [logo, setLogo] = useState(logo1);
+    const [logo, setLogo] = useState(logo2);
     const [navbarHeight, setNavbarHeight] = useState(80);
 
     useEffect(() => {
@@ -29,7 +32,7 @@ const Layoutchinna = () => {
 
         if (scroll < 200) {
             navbar.classList.remove('BgColour');
-            setLogo(logo1);
+            setLogo(logo2);
             setNavbarHeight(120);
         } else {
             navbar.classList.add('BgColour');
@@ -45,10 +48,9 @@ const Layoutchinna = () => {
         };
     }, []);
 
-    // Language toggle function
     const changeLanguage = () => {
         const currentLanguage = i18n.language;
-        const newLanguage = currentLanguage === 'en' ? 'cn' : 'en'; 
+        const newLanguage = currentLanguage === 'en' ? 'cn' : 'en';
         i18n.changeLanguage(newLanguage);
     };
 
@@ -61,10 +63,23 @@ const Layoutchinna = () => {
                             <Drawer />
                         </li>
                         <li>
-                            <Link to="landing"> <img src={logo} alt="Logo" className="navbar-logo" /></Link>
+                            <Link to="/landing"> <img src={logo} alt="Logo" className="navbar-logo" /></Link>
                         </li>
-                        <li>
-                            <FontAwesomeIcon icon={faEarthOceania} className="me-3" style={{fontSize:"20px"}} spin onClick={changeLanguage} />
+                        <li className="d-flex">
+                            <div >
+                                <Dropdown className="custom-dropdown me-3">
+                                    <Dropdown.Toggle id="dropdown-basic">
+                                        <FontAwesomeIcon
+                                            icon={faEarthOceania}
+                                            style={{ fontSize: "20px" }}
+                                            spin
+                                        />
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu onClick={changeLanguage}>
+                                        <Dropdown.Item>CN/EN</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
+                            </div>
                             <span onClick={toggleOverlay2}>
                                 <FontAwesomeIcon icon={faCircleUser} /> {t('contact')}
                             </span>
@@ -92,6 +107,7 @@ const Layoutchinna = () => {
 export default Layoutchinna;
 
 const Drawer = () => {
+
     const [isOpen, setIsOpen] = useState(false);
     const drawerRef = useRef(null);
     const { t } = useTranslation();
@@ -119,35 +135,34 @@ const Drawer = () => {
     }, [isOpen]);
 
     return (
-        <div>
-            <a onClick={toggleDrawer}>  &#9776; {t('menu')} </a>
-            {isOpen && <div className="backdrop" onClick={toggleDrawer}></div>}
-            <div
-                ref={drawerRef}
-                className={`drawer drawer-left ${isOpen ? 'show' : ''}`}
-                tabIndex="-1"
-                role="dialog"
-                aria-labelledby="drawer-1-title"
-                aria-hidden={!isOpen}
-                id="drawer-1"
-            >
-                <div className="drawer-content drawer-content-scrollable" role="document">
-                    <div className="drawer-header">
-                        <p className="drawer-title" id="drawer-1-title" onClick={toggleDrawer} aria-label="Close">&times; {t('CLOSE')}</p>
-                    </div>
-                    <div className="drawer-body">
-                        <div style={{ textAlign: "end" }}>
-                            <p>{t('inspiringGreatness')}</p>
-                            <p>{t('models')}</p>
-                            <p>{t('bespoke')}</p>
-                            <p>{t('ownership')}</p>
-                            <p>{t('provenance')}</p>
-                            <p>{t('boutique')}</p>
-                            <p>{t('museArtsProgramme')}</p>
+        <>
+
+            <div>
+                <a onClick={toggleDrawer}>  &#9776; {t('menu')} </a>
+                {isOpen && <div className="backdrop" onClick={toggleDrawer}></div>}
+                <div
+                    ref={drawerRef}
+                    className={`drawer drawer-left ${isOpen ? 'show' : ''}`}
+                    tabIndex="-1"
+                    role="dialog"
+                    aria-labelledby="drawer-1-title"
+                    aria-hidden={!isOpen}
+                    id="drawer-1"
+                >
+                    <div className="drawer-content drawer-content-scrollable" role="document">
+                        <div className="drawer-header">
+                            <p className="drawer-title" id="drawer-1-title" onClick={toggleDrawer} aria-label="Close">&times; {t('CLOSE')}</p>
+                        </div>
+                        <div className="drawer-body">
+                            <div style={{ textAlign: "end" }}>
+                                <p>   <Link to="/scmpage"> {t('supplyChainManagement')}</Link></p>
+                                <p>  <Link to="/techpage"> {t('technologies')}</Link></p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+        </>
     );
 };
