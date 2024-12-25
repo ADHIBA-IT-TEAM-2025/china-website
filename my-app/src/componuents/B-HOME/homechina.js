@@ -5,7 +5,7 @@ import Footercn from "../A-LAYOUT/Footercn";
 import SplitType from 'split-type';
 import { gsap } from 'gsap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRightLong, faArrowUpRightDots, faBoxesPacking, faCheck, faHandshake, faHourglass, faHourglassEnd, faPersonMilitaryPointing, faScrewdriverWrench, faServer } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Layoutchinna from '../A-LAYOUT/layoutchina';
@@ -97,24 +97,19 @@ export default function ChinnaHome() {
                     onMouseLeave={() => setHover("")}
                 >
                     <div className="hoverrrr">
-                        <h6 className="mb-5">{t('technologies')}</h6>
+                        <h6 className="mb-4 ">{t('supplyChainManagement')}</h6>
                         <span className="hover-container">
-                            {t('digitalSignage')}
+                            <Link to="/scmpage" style={{ color: "white", textDecoration: "none" }}> {t('largeFormat')}</Link>
                             <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" />
                         </span>
                         <span className="hover-container">
-                            {t('contentManager')}
+                            <Link to="/scmpage" style={{ color: "white", textDecoration: "none" }}> {t('commercialPrinting')}</Link>
                             <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" />
                         </span>
                         <span className="hover-container">
-                            {t('creativeServices')}
+                            <Link to="/scmpage" style={{ color: "white", textDecoration: "none" }}> {t('turnKeySystems')}</Link>
                             <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" />
                         </span>
-                        <div className="button-right-left-cn">
-                            <button className="btn custom-btn mt-4">
-                                <Link to="/techpage">{t('learnMore')}</Link>
-                            </button>
-                        </div>
                     </div>
                 </div>
                 <div
@@ -122,90 +117,112 @@ export default function ChinnaHome() {
                     onMouseEnter={() => setHover("hover-left")}
                     onMouseLeave={() => setHover("")}
                 >
-                    <div className="hoverrrr">
-                        <h6 className="mb-5">{t('supplyChainManagement')}</h6>
-                        <span className="hover-container">
-                            {t('largeFormat')}
-                            <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" />
-                        </span>
-                        <span className="hover-container">
-                            {t('commercialPrinting')}
-                            <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" />
-                        </span>
-                        <span className="hover-container">
-                            {t('turnKeySystems')}
-                            <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" />
-                        </span>
 
-                        <div className="button-right-left-cn">
-                            <button className="btn custom-btn mt-4">
-                                <Link to="/scmpage">{t('learnMore')}</Link>
-                            </button>
-                        </div>
+                    <div className="hoverrrr">
+                        <h6 className="mb-4 ">{t('technologies')}</h6>
+                        <span className="hover-container">
+                            <Link to="/techpage" style={{ color: "white", textDecoration: "none" }}>{t('digitalSignage')}</Link>
+                            <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" />
+                        </span>
+                        <span className="hover-container">
+                            <Link to="/techpage" style={{ color: "white", textDecoration: "none" }}>{t('contentManager')}</Link>
+                            <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" />
+                        </span>
+                        <span className="hover-container">
+                            <Link to="/techpage" style={{ color: "white", textDecoration: "none" }}>{t('creativeServices')}</Link>
+                            <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" />
+                        </span>
                     </div>
                 </div>
             </div>
 
 
-            <section style={{backgroundColor:" #eceaea;"}}>
+            {/* OUR MISSION */}
+            <section style={{ backgroundColor: " #dddddd6c" }}>
                 <div className="mini-block-statement w-clearfix">
                     <h2 className="heading-34">{t('ourMission')}</h2>
-                    <p className="text-block-60" dangerouslySetInnerHTML={{ __html: t('missionDescriptionWithBreak') }} />
+                    <p className="text-block-60 col-9" style={{ color: "#8c8c8c" }} >{t('missionDescriptionWithBreak')}</p>
                 </div>
             </section>
 
-            <section>
+            {/* EMS */}
+            <section >
                 <div className="mini-block-statement w-clearfix">
-                    <h6 className="heading-34">{t('ems')}</h6>
-                    <p className="text-block-60" dangerouslySetInnerHTML={{ __html: t('emsp') }} />
+                    <h6 className="heading-34 col-lg-7">{t('ems')}</h6>
+                    <p className="text-block-60 col-9" style={{ color: "#8c8c8c" }} >
+                    {t('emsp')}
+                    </p>
                 </div>
 
-                <section class="services mb-5">
-                    <div class="container ">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="card shadow p-5 d-flex flex-column justify-content-center align-items-center">
-                                    <div class="anim-layer"></div>
-                                   <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden-card" />
-                                    <h2>Original Equipment Manufacturer (OEM) </h2>
-                                    <p class="">Nystai acts as an OEM, manufacturing electronics products for companies under their brand names. We offer a full range of services, from sourcing components to assembling and testing the final product, ensuring that each item meets rigorous quality standards and is delivered on time. </p>
+                <section className="services">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-3">
+                                <div className="card d-flex flex-column justify-content-center align-items-center">
+                                    <div className="anim-layer"></div>
+                                    <FontAwesomeIcon icon={faScrewdriverWrench} className="ms-3 icon-hidden-card" />
+                                    <h2>{t('oem')}</h2>
+                                    <p>{t('oemDesc')}</p>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
-                                <div class="card shadow p-5 d-flex flex-column justify-content-center align-items-center">
-                                    <div class="anim-layer"></div>
-                                   <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden-card" />
-                                    <h2>Custom Product Design and Manufacturing </h2>
-                                    <p class=" mb-0">We provide customized product design and manufacturing services, working closely with clients to develop tailored electronic solutions. From conceptualization to final production, Nystai ensures that each product aligns with customer specifications, delivering innovative and reliable outcomes. </p>
+                            <div className="col-lg-3">
+                                <div className="card d-flex flex-column justify-content-center align-items-center">
+                                    <div className="anim-layer"></div>
+                                    <FontAwesomeIcon icon={faPersonMilitaryPointing} className="ms-3 icon-hidden-card" />
+                                    <h2>{t('customCreation')}</h2>
+                                    <p>{t('customCreationDesc')}</p>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
-                                <div class="card shadow p-5 d-flex flex-column justify-content-center align-items-center">
-                                    <div class="anim-layer"></div>
-                                   <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden-card" />
-                                    <h2>Customer-Supplied Designs</h2>
-                                    <p class=" mb-0">For customers with pre-existing designs, Nystai offers manufacturing expertise to bring those designs to life. We handle everything from sourcing materials to production, ensuring that the final product adheres to design specifications and is manufactured with precision and quality. </p>
+                            <div className="col-lg-3">
+                                <div className="card d-flex flex-column justify-content-center align-items-center">
+                                    <div className="anim-layer"></div>
+                                    <FontAwesomeIcon icon={faBoxesPacking} className="ms-3 icon-hidden-card" />
+                                    <h2>{t('clientDesigns')}</h2>
+                                    <p>{t('clientDesignsDesc')}</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3">
+                                <div className="card d-flex flex-column justify-content-center align-items-center">
+                                    <div className="anim-layer"></div>
+                                    <FontAwesomeIcon icon={faServer} className="ms-3 icon-hidden-card" />
+                                    <h2>{t('reverseDesign')}</h2>
+                                    <p>{t('reverseDesignDesc')}</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="row mt-4">
-                            <div class="col-lg-4">
-                                <div class="card shadow p-5 d-flex flex-column justify-content-center align-items-center">
-                                    <div class="anim-layer"></div>
-                                   <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden-card" />
-                                    <h2>Reverse Engineering Services </h2>
-                                    <p class=" mb-0">Nystai offers reverse engineering services to analyze and replicate existing products. We dismantle, study, and recreate electronic components to help clients develop improved versions or create compatible replacements, ensuring continuity and enhancement of their product offerings.</p>
+                        <div className="row mt-4">
+                            <div className="col-lg-3">
+                                <div className="card d-flex flex-column justify-content-center align-items-center">
+                                    <div className="anim-layer"></div>
+                                    <FontAwesomeIcon icon={faArrowUpRightDots} className="ms-3 icon-hidden-card" />
+                                    <h2>{t('productUpgrades')}</h2>
+                                    <p>{t('productUpgradesDesc')}</p>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
-                                <div class="card shadow p-5 d-flex flex-column justify-content-center align-items-center">
-                                    <div class="anim-layer"></div>
-                                   <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden-card" />
-                                    <h2>Product Upgrades for Customers</h2>
-                                    <p class=" mb-0">Nystai specializes in product upgrades, offering enhancements to existing electronics by improving functionality, performance, and design. We work with customers to upgrade their products, extending their lifecycle and ensuring they remain competitive in the marketplace. </p>
+                            <div className="col-lg-3">
+                                <div className="card d-flex flex-column justify-content-center align-items-center">
+                                    <div className="anim-layer"></div>
+                                    <FontAwesomeIcon icon={faHandshake} className="ms-3 icon-hidden-card" />
+                                    <h2>{t('ecoSolutions')}</h2>
+                                    <p>{t('ecoSolutionsDesc')}</p>
                                 </div>
                             </div>
-                          
+                            <div className="col-lg-3">
+                                <div className="card d-flex flex-column justify-content-center align-items-center">
+                                    <div className="anim-layer"></div>
+                                    <FontAwesomeIcon icon={faCheck} className="ms-3 icon-hidden-card" />
+                                    <h2>{t('prototyping')}</h2>
+                                    <p>{t('prototypingDesc')}</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3">
+                                <div className="card d-flex flex-column justify-content-center align-items-center">
+                                    <div className="anim-layer"></div>
+                                    <FontAwesomeIcon icon={faHourglassEnd} className="ms-3 icon-hidden-card" />
+                                    <h2>{t('supplyChain')}</h2>
+                                    <p>{t('supplyChainDesc')}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>

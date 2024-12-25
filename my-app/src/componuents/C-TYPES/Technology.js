@@ -1,17 +1,16 @@
 import React, { useEffect } from "react";
-import { useTranslation } from 'react-i18next'; 
+import { useTranslation } from 'react-i18next';
 import techbanner from "../Z-IMAGE/tech-landing.png"
 import leftimg from "../Z-IMAGE/tech-2.png"
 import rightimg from "../Z-IMAGE/tech-3.png"
 import leftboximg from "../Z-IMAGE/tech-4.png"
 import imgbg from "../Z-IMAGE/tech-5.png"
-import techbanner2 from "../Z-IMAGE/tech-6.png"
 import Footercn from "../A-LAYOUT/Footercn";
 import Layoutchinna from "../A-LAYOUT/layoutchina";
 
 export default function Technology() {
 
-    const { t } = useTranslation(); 
+    const { t } = useTranslation();
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -19,57 +18,81 @@ export default function Technology() {
 
     return (
         <>
-          <Layoutchinna/>
-        
+            <Layoutchinna />
+
             {/* BANNER */}
             <section className="card text-danger" style={{ border: "none", outline: "none" }}>
                 <img src={techbanner} className="card-img" alt="..." />
                 <div className="card-img-overlay container" style={{ display: "flex", justifyContent: "center", flexDirection: "column", top: "-100px" }}>
-                    <h5 className="TECH-H3-CN-NYS" style={{ fontSize: "3.25rem" }}>{t('technologyApplication')}</h5>
-                    <p className="card-text" style={{ fontSize: "1.2rem" }}>{t('bannerText')}</p>
+                    <h5 className="TECH-H3-CN-NYS col-lg-7" style={{ fontSize: "3.25rem" }}>{t('technologyApplication')}</h5>
+                    <p className="card-text col-lg-4" style={{ fontSize: "1.2rem" }}>{t('bannerTextTEC')}</p>
                 </div>
             </section>
 
             {/* LEFT AND RIGHT CARD */}
             <section className="container-fluid">
-                <div className="col-12">
-                    <h1 className="text-center" style={{ fontSize: "3.25rem" }}>{t('technologyTitle')}</h1>
-                    <div className="row mt-5" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                        <div className="col-lg-6">
-                            <img src={leftimg} className="img-fluid" style={{ height: "60vh", width: "fit-content" }} />
+                <div className="col-12 mb-5">
+                    <h1 className="text-center" style={{ fontSize: "3rem", textTransform: "uppercase", fontWeight: "500" }}>{t('technologyTitle')}</h1>
+                    {/* FIRST CARD */}
+                    <div className="row mt-5 mb-5" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                        <div className="col-lg-6" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                            <img src={leftimg} className="img-fluid" />
                         </div>
                         <div className="col-lg-6">
                             <div className="col-lg-8" style={{ marginLeft: "7%" }}>
-                                <h3 className="TECH-H3-CN-NYS">{t('technologyApplication')}</h3>
-                                <p>{t('contentText')}</p>
+                                <h3 className="h3-rlcard-nyscn">{t('technologyApplication')}</h3>
+                                {/* <p>{t('contentText')}</p> */}
+
+                                <ul className="left-right-card-ncn">
+                                    <li>{t('technologyApplication1')}</li>
+                                    <li>{t('technologyApplication22')}</li>
+                                    <li>{t('technologyApplication3')}</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <div className="row" style={{ display: "flex", justifyContent: "center", alignItems: "center", marginTop: "-50px" }}>
-                        <div className="col-lg-6">
-                            <div className="col-lg-8" style={{ marginLeft: "18%", marginTop: "20%" }}>
-                                <h3 className="TECH-H3-CN-NYS">{t('technologyApplication2')}</h3>
-                                <p>{t('contentText2')}</p>
+
+                    {/* SECOND CARD */}
+                    <div className="row mt-5" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                        <div className="col-lg-6" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                            <div className="col-lg-8" style={{ marginLeft: "7%" }}>
+                                <h3 className="h3-rlcard-nyscn">{t('technologyApplication2')}</h3>
+                                {/* <p>{t('contentText2')}</p> */}
+
+
+                                <ul className="left-right-card-ncn">
+                                    <li>{t('Automation1')}</li>
+                                    <li>{t('Automation2')}</li>
+                                    <li>{t('Automation3')}</li>
+                                </ul>
                             </div>
                         </div>
-                        <div className="col-lg-6">
-                            <img src={rightimg} className="img-fluid" style={{ height: "60vh", width: "fit-content" }} />
+                        <div className="col-lg-6" >
+                            <img src={rightimg} className="img-fluid" style={{ marginLeft: "7%" }} />
                         </div>
                     </div>
+
+
                 </div>
             </section>
 
             {/* BOX CARD */}
-            <section className="mb-5 mt-5" style={{ padding: "5%" }}>
+            <section style={{ padding: "0 9% 0 9%" }}>
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-lg-6">
                             <img src={leftboximg} className="img-fluid" />
                         </div>
-                        <div className="col-lg-6 mt-5">
-                            <div className="col-lg-10 mt-5">
-                                <h1 className="TECH-H3-CN-NYS">{t('buildingShenzhen')}</h1>
-                                <p>{t('shortContentText')}</p>
+                        <div className="col-lg-6" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                            <div className="col-lg-10 ">
+                                <h1 className="h3-rlcard-nyscn">{t('buildingShenzhen')}</h1>
+                                {/* <p>{t('shortContentText')}</p> */}
+
+                                <ul className="left-right-card-ncn">
+                                    <li>{t('manufacturingt1')}</li>
+                                    <li>{t('manufacturingt2')}</li>
+                                    <li>{t('manufacturingt3')}</li>
+                                </ul>
                             </div>
 
                         </div>
@@ -81,8 +104,8 @@ export default function Technology() {
             <section className="mt-5">
                 <div className="card container text-center text-danger" style={{ border: "none", outline: "none" }}>
                     <img src={imgbg} className="img-fluid" />
-                    <div className="card-img-overlay" style={{ marginTop: "18.5%" }}>
-                        <h5 className="TECH-H3-CN-NYS" style={{ fontSize: "3rem" }}>{t('manufactureProduct')}</h5>
+                    <div className="card-img-overlay" style={{ marginTop: "10.5%" }}>
+                        <h5 className="TECH-H3-CN-NYS" style={{ fontSize: "2.75rem" }}>{t('manufactureProduct')}</h5>
                         <p className="card-text">{t('longContentText')}</p>
                     </div>
                 </div>
@@ -90,7 +113,7 @@ export default function Technology() {
 
             {/* WAVE DESIGN */}
             <section>
-                <img src={techbanner2} className="img-fluid" />
+                {/* <img src={techbanner2} className="img-fluid" /> */}
             </section>
 
             {/* FOOTER */}

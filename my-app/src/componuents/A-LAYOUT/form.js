@@ -15,7 +15,8 @@ export default function Form() {
     return (
         <>
 
-            <body className='form-body-cn'>
+ 
+  <body className='form-body-cn'>
                 <div className={`container ${isSignUpActive ? 'active' : ''}`}>
                     <div className="sign_up form_container">
                         <form>
@@ -39,7 +40,7 @@ export default function Form() {
                             <button type="button">{t('signUp')}</button>
                         </form>
                     </div>
-
+ 
                     <div className="sign_in form_container">
                         <form>
                             <h1>{t('signIn')}</h1>
@@ -61,7 +62,7 @@ export default function Form() {
                             <button type="button">{t('signIn')}</button>
                         </form>
                     </div>
-
+ 
                     <div className="toggle_container">
                         <div className="toggle">
                             <div className="toggle_panel toggle_left">
@@ -78,6 +79,7 @@ export default function Form() {
                     </div>
                 </div>
             </body>
+ 
 
         </>
     );

@@ -7,11 +7,9 @@ import ChinnaHome from './componuents/B-HOME/homechina';
 import Technology from './componuents/C-TYPES/Technology';
 import Supplychain from './componuents/C-TYPES/SCM';
 
-
 function App() {
   return (
     <>
-
       <HashRouter>
         <Routes>
           <Route path="/" element={<Layoutchinna />}></Route>
@@ -19,10 +17,8 @@ function App() {
           <Route path='landing' element={<ChinnaHome />} />
           <Route path="techpage" element={<Technology />} />
           <Route path="scmpage" element={<Supplychain />} />
-
         </Routes>
       </HashRouter>
-
     </>
   );
 }
