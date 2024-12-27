@@ -5,13 +5,12 @@ import '../CSS/nav.css';
 import logo1 from '../Z-IMAGE/triangle (6).png';
 import logo2 from '../Z-IMAGE/nystai without tri.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleUser, faCircleXmark, faEarthOceania, faLanguage } from "@fortawesome/free-solid-svg-icons";
+import { faCircleUser, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import Formcn from "../A-LAYOUT/form";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Dropdown from 'react-bootstrap/Dropdown';
+import i18next from '../../i18n';
 
 const Layoutchinna = () => {
-
     const { t, i18n } = useTranslation();
     const [isOpen2, setIsOpen2] = useState(false);
     const [logo, setLogo] = useState(logo2);
@@ -47,18 +46,33 @@ const Layoutchinna = () => {
         };
     }, []);
 
-    const changeLanguage = () => {
-        const currentLanguage = i18n.language;
-        const newLanguage = currentLanguage === 'en' ? 'cn' : 'en';
+    useEffect(() => {
+        // Check if the language is already set in localStorage
+        const savedLanguage = localStorage.getItem("i18nextLng");
+
+        if (!savedLanguage || savedLanguage.length > 2) {
+            // Set Japanese as the default language if no language is set
+            i18next.changeLanguage("jp");
+            localStorage.setItem("i18nextLng", "jp");
+        } else {
+            // Keep Chinese as the default if the language is English or undefined
+            if (savedLanguage !== "jp") {
+                i18next.changeLanguage("jp");
+                localStorage.setItem("i18nextLng", "jp");
+            } else {
+                i18next.changeLanguage(savedLanguage);
+            }
+        }
+    }, []);
+
+    const handleLanguageToggle = () => {
+        const currentLanguage = localStorage.getItem("i18nextLng") || "jp";
+        const newLanguage = currentLanguage === "jp" ? "en" : "jp";
         i18n.changeLanguage(newLanguage);
+        localStorage.setItem("i18nextLng", newLanguage);
     };
-
-
-    
     return (
         <>
-        
-
             <div className="nav-cn-bg-main">
                 <div id="navbar" className="navbar-cn-bg-main" style={{ height: `${navbarHeight}px` }}>
                     <ul className="navbar-cn-bg-main-ul">
@@ -69,43 +83,22 @@ const Layoutchinna = () => {
                             <Link to="/landing"> <img src={logo} alt="Logo" className="navbar-logo" /></Link>
                         </li>
                         <li className="d-flex" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-
-                            <div className="dropdown ms-3">
-                                <h5>
-                                    <button
-                                        className="btn text-white dropdown-toggle"
-                                        type="button"
-                                        id="dropdownMenuButton1"
-                                        data-bs-toggle="dropdown"
-                                        aria-expanded="false"
-                                    >
-                                        <FontAwesomeIcon icon={faLanguage} />
-                                    </button>
-                                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        <li onClick={changeLanguage}>
-                                            <a className="dropdown-item" href="#">
-                                                CN
-                                            </a>
-                                        </li>
-                                        <li onClick={changeLanguage}>
-                                            <a className="dropdown-item" href="#">
-                                                EN
-                                            </a>
-                                        </li>
-
-                                    </ul>
-                                </h5>
+                            <div className="language-toggle ms-3">
+                            {/* <button type="button" class="btn btn-light">Light</button */}
+                                <button onClick={handleLanguageToggle} className="btn btn-light">
+                                    {localStorage.getItem("i18nextLng") === "jp" ? "English" : "中国人"}
+                                </button>
                             </div>
                             <span onClick={toggleOverlay2} style={{ cursor: "pointer" }}>
                                 <h5>   <FontAwesomeIcon icon={faCircleUser} className="me-2 ms-3" />{t('contact')}</h5>
                             </span>
                         </li>
-                    </ul >
-                </div >
-            </div >
+                    </ul>
+                </div>
+            </div>
 
             <div>
-                <div id="myNav" className="overlay" style={{ height: isOpen2 ? '100%' : '0%', cursor: "pointer" }} >
+                <div id="myNav" className="overlay" style={{ height: isOpen2 ? '100%' : '0%', cursor: "pointer" }}>
                     <div className="over-header">
                         <a className="closebtn" onClick={toggleOverlay2}> <FontAwesomeIcon icon={faCircleXmark} /></a>
                     </div>
@@ -134,8 +127,6 @@ function OverlayNav() {
     };
 
     const { t } = useTranslation();
-
-
     return (
         <div>
             <div className={`overlay-menu ${isOpen ? 'overlay-open-menu' : ''}`}>

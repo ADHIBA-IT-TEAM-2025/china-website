@@ -40,7 +40,7 @@ export default function Technology() {
                         </div>
                         <div className="col-lg-6">
                             <div className="col-lg-8" style={{ marginLeft: "7%" }}>
-                                <h3 className="h3-rlcard-nyscn">{t('technologyApplication')}</h3>
+                                <h3 className="h3-rlcard-nyscn">{t('technologyApplicationun')}</h3>
                                 {/* <p>{t('contentText')}</p> */}
 
                                 <ul className="left-right-card-ncn">
@@ -58,8 +58,6 @@ export default function Technology() {
                             <div className="col-lg-8" style={{ marginLeft: "7%" }}>
                                 <h3 className="h3-rlcard-nyscn">{t('technologyApplication2')}</h3>
                                 {/* <p>{t('contentText2')}</p> */}
-
-
                                 <ul className="left-right-card-ncn">
                                     <li>{t('Automation1')}</li>
                                     <li>{t('Automation2')}</li>

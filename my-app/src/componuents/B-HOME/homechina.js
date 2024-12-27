@@ -86,9 +86,7 @@ export default function ChinnaHome() {
 
     return (
         <>
-
             <Layoutchinna />
-
 
             <div className={`chinasite-landing-page ${hover}`}>
                 <div
@@ -99,15 +97,15 @@ export default function ChinnaHome() {
                     <div className="hoverrrr">
                         <h6 className="mb-4 ">{t('supplyChainManagement')}</h6>
                         <span className="hover-container">
-                            <Link to="/scmpage" style={{ color: "white", textDecoration: "none" }}> {t('largeFormat')}</Link>
+                            <Link to="/scmpage" style={{ color: "white", textDecoration: "none" }}> {t('Streamlinesupplychain')}</Link>
                             <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" />
                         </span>
                         <span className="hover-container">
-                            <Link to="/scmpage" style={{ color: "white", textDecoration: "none" }}> {t('commercialPrinting')}</Link>
+                            <Link to="/scmpage" style={{ color: "white", textDecoration: "none" }}> {t('Partnersupport')}</Link>
                             <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" />
                         </span>
                         <span className="hover-container">
-                            <Link to="/scmpage" style={{ color: "white", textDecoration: "none" }}> {t('turnKeySystems')}</Link>
+                            <Link to="/scmpage" style={{ color: "white", textDecoration: "none" }}> {t('Efficientlogistics')}</Link>
                             <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" />
                         </span>
                     </div>
@@ -121,21 +119,20 @@ export default function ChinnaHome() {
                     <div className="hoverrrr">
                         <h6 className="mb-4 ">{t('technologies')}</h6>
                         <span className="hover-container">
-                            <Link to="/techpage" style={{ color: "white", textDecoration: "none" }}>{t('digitalSignage')}</Link>
+                            <Link to="/techpage" style={{ color: "white", textDecoration: "none" }}>{t('Integrated security')}</Link>
                             <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" />
                         </span>
                         <span className="hover-container">
-                            <Link to="/techpage" style={{ color: "white", textDecoration: "none" }}>{t('contentManager')}</Link>
+                            <Link to="/techpage" style={{ color: "white", textDecoration: "none" }}>{t('Smart home integration')}</Link>
                             <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" />
                         </span>
                         <span className="hover-container">
-                            <Link to="/techpage" style={{ color: "white", textDecoration: "none" }}>{t('creativeServices')}</Link>
+                            <Link to="/techpage" style={{ color: "white", textDecoration: "none" }}>{t('Industry-specific solution')}</Link>
                             <FontAwesomeIcon icon={faArrowRightLong} className="ms-3 icon-hidden" />
                         </span>
                     </div>
                 </div>
             </div>
-
 
             {/* OUR MISSION */}
             <section style={{ backgroundColor: " #dddddd6c" }}>
